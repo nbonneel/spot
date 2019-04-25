@@ -1,6 +1,7 @@
 # SPOT: Sliced Partial Optimal Transport
-# Nicolas Bonneel and David Coeurjolly
-# Univ. Lyon, CNRS
+
+ ### Nicolas Bonneel and David Coeurjolly
+ ### Univ. Lyon, CNRS
 
 Demonstration code.
 
