@@ -1,0 +1,2 @@
+all:
+	g++  -Ofast -march=native   -L/usr/local/opt/libomp/lib -I/usr/local/opt/libomp/include -Xpreprocessor -fopenmp -lomp -fno-signed-zeros -fno-trapping-math  -openmp  -funroll-loops main.cpp UnbalancedSliced.cpp -mavx -o FIST
