@@ -89,9 +89,14 @@ double sumCosts(const double* h1, int start1, const double* h2, int start2, int 
 	return s;
 }
 
+#if defined(__GNUC__)
+#define PORTABLE_ALIGN16 __attribute__((aligned(16)))
+#else
+#define PORTABLE_ALIGN16 __declspec(align(16))
+#endif
 
 float sum8(__m256 x) {
-	// hiQuad = ( x7, x6, x5, x4 )
+	/*// hiQuad = ( x7, x6, x5, x4 )
 	const __m128 hiQuad = _mm256_extractf128_ps(x, 1);
 	// loQuad = ( x3, x2, x1, x0 )
 	const __m128 loQuad = _mm256_castps256_ps128(x);
@@ -109,7 +114,12 @@ float sum8(__m256 x) {
 	const __m128 hi = _mm_shuffle_ps(sumDual, sumDual, 0x1);
 	// sum = ( -, -, -, x0 + x1 + x2 + x3 + x4 + x5 + x6 + x7 )
 	const __m128 sum = _mm_add_ss(lo, hi);
-	return _mm_cvtss_f32(sum);
+	return _mm_cvtss_f32(sum);*/
+
+	float PORTABLE_ALIGN16 TmpRes[8];
+	_mm256_store_ps(TmpRes, x);
+	return TmpRes[0] + TmpRes[1] + TmpRes[2] + TmpRes[3] +
+		TmpRes[4] + TmpRes[5] + TmpRes[6] + TmpRes[7];
 }
 
 // sum the cost of consecutively matching the first n values in h1 starting from start1 to the first n consecutive values of h2 starting at start2
