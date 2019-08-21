@@ -40,7 +40,7 @@ int main()
 
 	std::vector<Point<3, double> > randomPoint1(M);
 	std::vector<Point<3, double> > randomPoint2(N);
-	
+
 	for (int i=0; i<M; i++) {
 		randomPoint1[i][0] = rand()/(double)RAND_MAX;
 		randomPoint1[i][1] = rand()/(double)RAND_MAX;
@@ -49,8 +49,8 @@ int main()
 	for (int i=0; i<N; i++) {
 		randomPoint2[i][0] = rand()/(double)RAND_MAX * 2.0 + 2;
 		randomPoint2[i][1] = rand()/(double)RAND_MAX * 2.0 + 4;
-		randomPoint2[i][2] = rand()/(double)RAND_MAX * 2.0 + 6; 
-	}	
+		randomPoint2[i][2] = rand()/(double)RAND_MAX * 2.0 + 6;
+	}
 	std::vector<double> rot(9);
 	std::vector<double> trans(3);
 	double scaling;
