@@ -9,7 +9,7 @@ See `mainFIST.cpp`, this example demonstrates the fast iterative sliced transpor
 two random pointsets in dimension three. The `FIST` executable outputs the transformation
 (translation, rotation and scaling) to apply to the first point set to match (in the sense of the sliced optimal transport) the second one.
 
-`mainColorTransfer.cpp` is an example of color transfer between an image and a large one (see `data/`).
+`mainColorTransfer.cpp` is an example of color transfer between an image and a larger one (see `data/`). The result is given in `outtransfer.png`.
 
 ## Build
 
