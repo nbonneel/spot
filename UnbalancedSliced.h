@@ -47,6 +47,7 @@
 #include <intrin.h>
 #else
 #include <immintrin.h>
+#include <malloc.h>
 #endif
 
 
