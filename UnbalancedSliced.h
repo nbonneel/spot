@@ -44,10 +44,12 @@
 #include "Point.h"
 
 #ifdef _MSC_VER
-#include <intrin.h>
+  #include <intrin.h>
 #else
-#include <immintrin.h>
-#include <malloc.h>
+  #include <immintrin.h>
+  #if __linux__
+    #include <malloc.h>
+  #endif
 #endif
 
 
@@ -947,7 +949,7 @@ public:
 		if (useScaling)
 			transG = scaling*rotG * transG;
 		else
-			transG = rotG * transG;		
+			transG = rotG * transG;
 	}
 
 
