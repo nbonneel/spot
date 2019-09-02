@@ -38,6 +38,7 @@
 #include <cmath>
 #include <omp.h>
 #include <list>
+#include <thread>
 #include <random>
 #define cimg_display 0
 #include "CImg.h"
@@ -720,9 +721,10 @@ public:
 			}
 
 
-			std::sort(cloud1Idx.begin(), cloud1Idx.end());
+			std::thread mythread( [&]{std::sort(cloud1Idx.begin(), cloud1Idx.end()); } );
 			std::sort(cloud2Idx.begin(), cloud2Idx.end());
-
+                        mythread.join();
+                        
 			for (int i = 0; i < cloud1.size(); i++) {
 				projHist1[i] = cloud1Idx[i].first;
 			}
@@ -830,11 +832,13 @@ public:
 						for (int i = 0; i < points[cloud].size(); i++) {
 							cloud2Idx[thread_num][i] = std::make_pair(proj.proj(points[cloud][i]), i);
 						}
-						std::sort(cloud1Idx[thread_num].begin(), cloud1Idx[thread_num].end());
+                                                std::thread mythread( [&]{
+                                                                        std::sort(cloud1Idx[thread_num].begin(), cloud1Idx[thread_num].end());
 
-						for (int i = 0; i < Mbary; i++) {
-							projHist1[thread_num][i] = cloud1Idx[thread_num][i].first;
-						}
+                                                                        for (int i = 0; i < Mbary; i++) {
+                                                                          projHist1[thread_num][i] = cloud1Idx[thread_num][i].first;
+                                                                        }
+                                                                      });
 
 						std::sort(cloud2Idx[thread_num].begin(), cloud2Idx[thread_num].end());
 
@@ -842,6 +846,7 @@ public:
 							projHist2[i] = cloud2Idx[thread_num][i].first;
 						}
 
+                                                mythread.join();
 						transport1d(projHist1[thread_num], projHist2, Mbary, points[cloud].size(), corr1d);
 
 

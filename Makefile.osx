@@ -1,3 +1,3 @@
 all:
-	g++  -Ofast -march=native  -I. -L/usr/local/opt/libomp/lib -I/usr/local/opt/libomp/include -Xpreprocessor -fopenmp -lomp -fno-signed-zeros -fno-trapping-math  -openmp  -funroll-loops mainFIST.cpp UnbalancedSliced.cpp -mavx -o FIST
-	g++  -Ofast -march=native  -I. -L/usr/local/opt/libomp/lib -I/usr/local/opt/libomp/include -Xpreprocessor -fopenmp -lomp -fno-signed-zeros -fno-trapping-math  -openmp  -funroll-loops mainColorTransfer.cpp UnbalancedSliced.cpp -mavx -o colorTransfer
+	g++  --std=c++11 -Ofast -march=native  -I. -L/usr/local/opt/libomp/lib -I/usr/local/opt/libomp/include -Xpreprocessor -fopenmp -lomp -fno-signed-zeros -fno-trapping-math  -openmp  -funroll-loops mainFIST.cpp UnbalancedSliced.cpp -mavx -o FIST
+	g++  --std=c++11  -Ofast -march=native  -I. -L/usr/local/opt/libomp/lib -I/usr/local/opt/libomp/include -Xpreprocessor -fopenmp -lomp -fno-signed-zeros -fno-trapping-math  -openmp  -funroll-loops mainColorTransfer.cpp UnbalancedSliced.cpp -mavx -o colorTransfer
