@@ -27,6 +27,20 @@ two random pointsets in dimension three. The `FIST` executable outputs the trans
 
 * Windows: use the Visual Studio Project.
 
+## Citation
+
+``` bibtex
+@article{bonneel19SPOT,
+    author = "Bonneel, Nicolas and Coeurjolly, David",
+    title = "Sliced Partial Optimal Transport",
+    journal = "{ACM} Transactions on Graphics (Proceedings of SIGGRAPH)",
+    year = "2019",
+    abstract = "Optimal transport research has surged in the last decade with wide applications in computer graphics. In most cases, however, it has focused on the special case of the so-called “balanced” optimal transport problem, that is, the problem of optimally matching positive measures of equal total mass. While this approach is suitable for handling probability distributions as their total mass is always equal to one, it precludes other applications manipulating disparate measures. Our paper proposes a fast approach to the optimal transport of constant distributions supported on point sets of different cardinality via one-dimensional slices. This leads to one-dimensional partial assignment problems akin to alignment problems encountered in genomics or text comparison. Contrary to one-dimensional balanced optimal transport that leads to a trivial linear-time algorithm, such partial optimal transport, even in 1-d, has not seen any closed-form solution nor very efficient algorithms to date. We provide the first efficient 1-d partial optimal transport solver. Along with a quasilinear time problem decomposition algorithm, it solves 1-d assignment problems consisting of up to millions of Dirac distributions within fractions of a second in parallel. We handle higher dimensional problems via a slicing approach, and further extend the popular iterative closest point algorithm using optimal transport – an algorithm we call Fast Iterative Sliced Transport. We illustrate our method on computer graphics applications such a color transfer and point cloud registration.",
+    volume = "38",
+    number = "4",
+    month = "jul"
+}
+```
 
 ## License
 
