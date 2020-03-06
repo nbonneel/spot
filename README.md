@@ -9,7 +9,7 @@ See `mainFIST.cpp`, this example demonstrates the fast iterative sliced transpor
 two random pointsets in dimension three. The `FIST` executable outputs the transformation
 (translation, rotation and scaling) to apply to the first point set to match (in the sense of the sliced optimal transport) the second one.
 
-`mainColorTransfer.cpp` is an example of color transfer between an image and a larger one (see `data/`). The result is given in `outtransfer.png`.
+`mainColorTransfer.cpp` is an example of color transfer between an image and a larger one (see `Datasets/Images/`). The result is given in `outtransfer.png`.
 
 ## Build
 
@@ -26,6 +26,15 @@ two random pointsets in dimension three. The `FIST` executable outputs the trans
         ./colorTransfer
 
 * Windows: use the Visual Studio Project.
+
+
+## Datasets
+
+We provide some data (poinsets, images) that were used for the SIGGRAPH Paper:
+
+* 3D pointsets (`mumble` and `castle` objects). Note that partial and global pointsets are centered. To repodruce a FIST test, you may need to draw a random rotation and scaling and apply it to one of the pointsets.
+* Images for the partial color transfer application
+* (2D coming soon)
 
 ## Citation
 
