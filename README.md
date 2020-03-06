@@ -30,9 +30,9 @@ two random pointsets in dimension three. The `FIST` executable outputs the trans
 
 ## Datasets
 
-We provide some data (poinsets, images) that were used for the SIGGRAPH Paper:
+We provide some data (pointsets, images) that were used for the SIGGRAPH Paper:
 
-* 3D pointsets (`mumble` and `castle` objects). Note that partial and global pointsets are centered. To repodruce a FIST test, you may need to draw a random rotation and scaling and apply it to one of the pointsets.
+* 3D pointsets (`mumble` and `castle` objects). Note that partial (with suffices `cut`) and global pointsets are centered. To reproduce a FIST test, you may need to draw a random rotation and scaling and apply it to one of the pointsets.
 * Images for the partial color transfer application
 * (2D coming soon)
 
